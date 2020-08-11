@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>854</width>
-    <height>510</height>
+    <height>610</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -60,11 +60,20 @@ border-radius:10px;</string>
        </property>
        <item>
         <widget class="QFrame" name="title_bar">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="maximumSize">
           <size>
            <width>16777215</width>
-           <height>50</height>
+           <height>150</height>
           </size>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
          </property>
          <property name="styleSheet">
           <string notr="true">background-color:none;</string>
@@ -83,7 +92,7 @@ border-radius:10px;</string>
            <number>0</number>
           </property>
           <property name="topMargin">
-           <number>0</number>
+           <number>5</number>
           </property>
           <property name="rightMargin">
            <number>0</number>
@@ -93,6 +102,9 @@ border-radius:10px;</string>
           </property>
           <item>
            <widget class="QFrame" name="frame_title">
+            <property name="styleSheet">
+             <string notr="true">border:none;</string>
+            </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
@@ -142,6 +154,9 @@ color: rgba(8, 255, 206,150);
                <property name="text">
                 <string>My App - Simple Task Manager</string>
                </property>
+               <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+               </property>
               </widget>
              </item>
              <item>
@@ -178,7 +193,7 @@ color: rgba(8, 255, 206,150);
                 <string>TIME</string>
                </property>
                <property name="alignment">
-                <set>Qt::AlignCenter</set>
+                <set>Qt::AlignHCenter|Qt::AlignTop</set>
                </property>
               </widget>
              </item>
@@ -192,6 +207,9 @@ color: rgba(8, 255, 206,150);
               <width>80</width>
               <height>16777215</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border:none;</string>
             </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
@@ -213,7 +231,7 @@ color: rgba(8, 255, 206,150);
               <number>0</number>
              </property>
              <property name="bottomMargin">
-              <number>20</number>
+              <number>140</number>
              </property>
              <item>
               <widget class="QPushButton" name="btn_maximize">
@@ -321,6 +339,9 @@ QPushButton:hover{
                <property name="checkable">
                 <bool>false</bool>
                </property>
+               <property name="autoDefault">
+                <bool>true</bool>
+               </property>
               </widget>
              </item>
             </layout>
@@ -331,6 +352,18 @@ QPushButton:hover{
        </item>
        <item>
         <widget class="QFrame" name="content_bar">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="styleSheet">
           <string notr="true">background-color:none;</string>
          </property>
@@ -821,7 +854,7 @@ color: rgb(2, 120, 230);</string>
                    <property name="maximumSize">
                     <size>
                      <width>16777215</width>
-                     <height>70</height>
+                     <height>100</height>
                     </size>
                    </property>
                    <property name="frameShape">
@@ -847,7 +880,7 @@ color: rgb(2, 120, 230);</string>
                      <number>10</number>
                     </property>
                     <item>
-                     <widget class="QLabel" name="label">
+                     <widget class="QLabel" name="label_quote">
                       <property name="sizePolicy">
                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                         <horstretch>0</horstretch>

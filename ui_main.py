@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'ui_mainoqqLXJ.ui'
+## Form generated from reading UI file 'ui_mainXqedkm.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.14.1
 ##
@@ -20,7 +20,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(850, 510)
+        MainWindow.resize(854, 610)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.drop_shadow_layout = QHBoxLayout(self.centralwidget)
@@ -39,16 +39,23 @@ class Ui_MainWindow(object):
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.title_bar = QFrame(self.drop_shadow_frame)
         self.title_bar.setObjectName(u"title_bar")
-        self.title_bar.setMaximumSize(QSize(16777215, 50))
+        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.title_bar.sizePolicy().hasHeightForWidth())
+        self.title_bar.setSizePolicy(sizePolicy)
+        self.title_bar.setMaximumSize(QSize(16777215, 150))
+        self.title_bar.setLayoutDirection(Qt.LeftToRight)
         self.title_bar.setStyleSheet(u"background-color:none;")
         self.title_bar.setFrameShape(QFrame.NoFrame)
         self.title_bar.setFrameShadow(QFrame.Raised)
         self.horizontalLayout = QHBoxLayout(self.title_bar)
         self.horizontalLayout.setSpacing(10)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout.setContentsMargins(0, 5, 0, 0)
         self.frame_title = QFrame(self.title_bar)
         self.frame_title.setObjectName(u"frame_title")
+        self.frame_title.setStyleSheet(u"border:none;")
         self.frame_title.setFrameShape(QFrame.StyledPanel)
         self.frame_title.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_7 = QHBoxLayout(self.frame_title)
@@ -70,6 +77,7 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "")
+        self.label_title.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
 
         self.horizontalLayout_7.addWidget(self.label_title)
 
@@ -86,7 +94,7 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "")
-        self.label_time.setAlignment(Qt.AlignCenter)
+        self.label_time.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
 
         self.horizontalLayout_7.addWidget(self.label_time)
 
@@ -96,12 +104,13 @@ class Ui_MainWindow(object):
         self.frame_btns = QFrame(self.title_bar)
         self.frame_btns.setObjectName(u"frame_btns")
         self.frame_btns.setMaximumSize(QSize(80, 16777215))
+        self.frame_btns.setStyleSheet(u"border:none;")
         self.frame_btns.setFrameShape(QFrame.StyledPanel)
         self.frame_btns.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_2 = QHBoxLayout(self.frame_btns)
         self.horizontalLayout_2.setSpacing(9)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 20)
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 140)
         self.btn_maximize = QPushButton(self.frame_btns)
         self.btn_maximize.setObjectName(u"btn_maximize")
         self.btn_maximize.setMinimumSize(QSize(16, 16))
@@ -150,6 +159,7 @@ class Ui_MainWindow(object):
 "	background-color: rgba(213, 14, 14,120);\n"
 "}")
         self.btn_close.setCheckable(False)
+        self.btn_close.setAutoDefault(True)
 
         self.horizontalLayout_2.addWidget(self.btn_close)
 
@@ -161,6 +171,9 @@ class Ui_MainWindow(object):
 
         self.content_bar = QFrame(self.drop_shadow_frame)
         self.content_bar.setObjectName(u"content_bar")
+        sizePolicy.setHeightForWidth(self.content_bar.sizePolicy().hasHeightForWidth())
+        self.content_bar.setSizePolicy(sizePolicy)
+        self.content_bar.setMaximumSize(QSize(16777215, 16777215))
         self.content_bar.setStyleSheet(u"background-color:none;")
         self.content_bar.setFrameShape(QFrame.StyledPanel)
         self.content_bar.setFrameShadow(QFrame.Raised)
@@ -195,14 +208,7 @@ class Ui_MainWindow(object):
         self.frame_circle_1.setObjectName(u"frame_circle_1")
         self.frame_circle_1.setMinimumSize(QSize(240, 240))
         self.frame_circle_1.setMaximumSize(QSize(240, 240))
-        self.frame_circle_1.setStyleSheet(u"QFrame{\n"
-"	border: 5px solid rgb(60,231,195);\n"
-"	border-radius: 120px;\n"
-"}\n"
-"\n"
-"QFrame:hover{\n"
-"	border: 5px solid rgba(0, 116, 118, 150);\n"
-"}")
+        self.frame_circle_1.setStyleSheet(u"QFrame{\n""border: 5px solid rgb(60,231,195);\n""border-radius: 120px;\n""}\n""\n""QFrame:hover{\n""border: 5px solid rgba(0, 116, 118, 150);\n""}")
         self.frame_circle_1.setFrameShape(QFrame.StyledPanel)
         self.frame_circle_1.setFrameShadow(QFrame.Raised)
         self.verticalLayout_6 = QVBoxLayout(self.frame_circle_1)
@@ -377,23 +383,21 @@ class Ui_MainWindow(object):
 
         self.frame_text = QFrame(self.frame_content_home)
         self.frame_text.setObjectName(u"frame_text")
-        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.frame_text.sizePolicy().hasHeightForWidth())
         self.frame_text.setSizePolicy(sizePolicy)
         self.frame_text.setMinimumSize(QSize(0, 70))
-        self.frame_text.setMaximumSize(QSize(16777215, 70))
+        self.frame_text.setMaximumSize(QSize(16777215, 100))
         self.frame_text.setFrameShape(QFrame.StyledPanel)
         self.frame_text.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_5 = QHBoxLayout(self.frame_text)
         self.horizontalLayout_5.setSpacing(0)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.horizontalLayout_5.setContentsMargins(30, 10, 30, 10)
-        self.label = QLabel(self.frame_text)
-        self.label.setObjectName(u"label")
-        sizePolicy.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
-        self.label.setSizePolicy(sizePolicy)
+        self.label_quote = QLabel(self.frame_text)
+        self.label_quote.setObjectName(u"label_quote")
+        sizePolicy.setHeightForWidth(self.label_quote.sizePolicy().hasHeightForWidth())
+        self.label_quote.setSizePolicy(sizePolicy)
+        self.label_quote.setSizeIncrement(QSize(1, 1))
         font4 = QFont()
         font4.setFamily(u"UVN Vung Tau")
         font4.setPointSize(12)
@@ -401,12 +405,13 @@ class Ui_MainWindow(object):
         font4.setItalic(False)
         font4.setUnderline(True)
         font4.setWeight(75)
-        self.label.setFont(font4)
-        self.label.setStyleSheet(u"color: rgb(110, 33, 198);\n"
+        self.label_quote.setFont(font4)
+        self.label_quote.setAutoFillBackground(False)
+        self.label_quote.setStyleSheet(u"color: rgb(110, 33, 198);\n"
 "background-color: rgba(238, 249, 241,150);")
-        self.label.setAlignment(Qt.AlignCenter)
+        self.label_quote.setAlignment(Qt.AlignCenter)
 
-        self.horizontalLayout_5.addWidget(self.label)
+        self.horizontalLayout_5.addWidget(self.label_quote)
 
 
         self.verticalLayout_5.addWidget(self.frame_text)
@@ -513,6 +518,6 @@ class Ui_MainWindow(object):
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"8GB", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"Total: 12GB", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"Temp: 45\u00b0C", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"DO WHAT YOU LOVE, LOVE WHAT YOU DO!", None))
+        self.label_quote.setText(QCoreApplication.translate("MainWindow", u"DO WHAT YOU LOVE, LOVE WHAT YOU DO!", None))
         self.label_credits.setText(QCoreApplication.translate("MainWindow", u"Designer: Th\u00e1i Anh T\u00e0i; thaianhtaivn@gmail.com", None))
     # retranslateUi

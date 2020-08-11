@@ -24,6 +24,8 @@ from ui_main import Ui_MainWindow
 from ui_functions import *
 
 class MainWindow(QMainWindow):
+    defaultSize = 14
+
     def __init__(self):
         QMainWindow.__init__(self)
         self.ui = Ui_MainWindow()
@@ -49,6 +51,7 @@ class MainWindow(QMainWindow):
         self.timer.setInterval(200)
         self.timer.timeout.connect(self.display_frame_circle1)
         self.timer.timeout.connect(self.display_frame_circle3)
+        self.timer.timeout.connect(self.resize_text)
 
         self.timer.start()
 
@@ -57,11 +60,8 @@ class MainWindow(QMainWindow):
     def mousePressEvent(self, event):
         self.dragPos = event.globalPos()
 
+
     def display_frame_circle1(self):
-        self.ui.label_time.setText(datetime.datetime.now().strftime("%I:%M:%S %p"))
-        newsize = self.frameGeometry().width()*self.frameGeometry().height()/100
-        print (newsize)
-        self.ui.label_time.setFont(QtGui.QFont('Swis721 Blk BT',(14*newsize/4355), QtGui.QFont.Bold))
 
         self.ui.label_2.setText('%s%%'%psutil.cpu_percent())
 
@@ -69,6 +69,37 @@ class MainWindow(QMainWindow):
     def display_frame_circle3(self):
         self.ui.label_10.setText('%s'%bytes2human(psutil.virtual_memory().used))
         self.ui.label_11.setText('Total: %s'%bytes2human(psutil.virtual_memory().total))
+
+    def resize_text(self):
+
+        if self.rect().width() // 60 != self.defaultSize:
+            f = QFont('Swis721 Blk BT', self.rect().width() // 60)
+            f1 = QFont('UVN Vung Tau', self.rect().width() // 60)
+            self.ui.label_title.setFont(QtGui.QFont(f))
+            self.ui.label_quote.setFont(QtGui.QFont(f1))
+            self.ui.label_time.setFont(QtGui.QFont(f))
+            self.defaultSize = self.rect().width()//60
+
+            border_radius = self.rect().width()//7
+            self.ui.frame_circle_1.setMaximumSize(QSize(self.rect().width()//3.5, self.rect().width()//3.5))
+            # self.ui.frame_circle_1.setMinimumSize(QSize(self.rect().width()//3.5, self.rect().width()//3.5))
+            self.ui.frame_circle_1.setStyleSheet(u"QFrame{\n""border: 5px solid rgb(60,231,195);\n""border-radius: %dpx;\n""}\n""\n""QFrame:hover{\n""border: 5px solid rgba(0, 116, 118, 150);\n""}"%(border_radius))
+
+            self.ui.frame_circle_2.setMaximumSize(QSize(self.rect().width()//3.5, self.rect().width()//3.5))
+            # self.ui.frame_circle_2.setMinimumSize(QSize(self.rect().width()//3.5, self.rect().width()//3.5))
+            self.ui.frame_circle_2.setStyleSheet(u"QFrame{\n""border: 5px solid rgb(60,231,195);\n""border-radius: %dpx;\n""}\n""\n""QFrame:hover{\n""border: 5px solid rgba(0, 116, 118, 150);\n""}"%(border_radius))
+
+            self.ui.frame_circle_3.setMaximumSize(QSize(self.rect().width()//3.5, self.rect().width()//3.5))
+            # self.ui.frame_circle_3.setMinimumSize(QSize(self.rect().width()//3.5, self.rect().width()//3.5))
+            self.ui.frame_circle_3.setStyleSheet(u"QFrame{\n""border: 5px solid rgb(60,231,195);\n""border-radius: %dpx;\n""}\n""\n""QFrame:hover{\n""border: 5px solid rgba(0, 116, 118, 150);\n""}"%(border_radius))
+
+            print (self.defaultSize)
+        else:
+            pass
+        #Update datetime
+        self.ui.label_time.setText(datetime.datetime.now().strftime("%I:%M:%S %p"))
+        pass
+
 
 
 
